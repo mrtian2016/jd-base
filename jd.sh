@@ -245,6 +245,15 @@ case $# in
       Help
     fi
     ;;
+      3)
+    if [[ $2 == now ]] && [ -f $3 ]; then
+      FileConf=$3
+      Run_Normal $1 $2
+    else
+      echo -e "\n临时config文件路径错误...\n"
+      Help
+    fi
+    ;;
   *)
     echo -e "\n命令过多...\n"
     Help
